@@ -1,0 +1,21 @@
+.todo-item {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-title {
+    flex: 1;
+}
+
+.todo-checkbox {
+    margin-right: 15px;
+}
+
+.todo-item button {
+    visibility: hidden;
+}
+
+.todo-item:hover button{
+    visibility: visible;
+}

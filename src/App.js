@@ -1,18 +1,25 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import toggleLoading from "./actions";
+import {loadItems} from "./actions";
+import Todos from "./Todos";
+
 
 function App() {
   const loading = useSelector(state => state.loading)
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(toggleLoading())
+    dispatch(loadItems())
   }, [])
 
   return (
     <div>
-      {loading ? "вкл" : "выкл"}
+      {loading ? (
+        <div className="alert alert-info">
+          Подождите: идёт загрузка данных
+        </div>
+      ): <Todos/>}
+
     </div>
   );
 }
